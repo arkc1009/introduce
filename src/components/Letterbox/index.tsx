@@ -17,7 +17,7 @@ interface LetterboxProps extends ComponentProps<"div"> {
 const FONT_SIZE = 96; // px
 
 const renderRepeatedText = (boxWidth: number, text: string) => {
-  return `${text} `.repeat((boxWidth / (text.length * FONT_SIZE)) * 2);
+  return `${text} `.repeat((boxWidth / (text.length * FONT_SIZE)) * 3);
 };
 
 export default function Letterbox({
