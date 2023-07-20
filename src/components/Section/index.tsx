@@ -10,7 +10,7 @@ export default function Section({
   ...rest
 }: SectionProps) {
   return (
-    <section className={twMerge("w-full h-screen", className)} {...rest}>
+    <section className={twMerge("w-full min-h-screen", className)} {...rest}>
       {children}
     </section>
   );

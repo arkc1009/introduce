@@ -1,6 +1,7 @@
 "use client";
 
 import Section, { SectionProps } from "@/components/Section";
+import ArrowSection from "@/components/Section/ArrowSection";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -27,8 +28,9 @@ const item = {
 
 export default function SecondSection(props: SectionProps) {
   return (
-    <Section
+    <ArrowSection
       className="grid grid-cols-2 p-16 gap-x-4 text-black text-xl h-auto"
+      nextId="3"
       {...props}
     >
       <motion.div
@@ -61,7 +63,7 @@ export default function SecondSection(props: SectionProps) {
         </motion.ul>
       </div>
 
-      <div className="flex items-center">
+      <div className="flex items-center justify-end pr-24">
         <motion.ul variants={container} initial="hidden" whileInView="show">
           <motion.h4
             variants={title}
@@ -89,6 +91,6 @@ export default function SecondSection(props: SectionProps) {
         className="h-screen flex items-center"
       >
       </motion.div>
-    </Section>
+    </ArrowSection>
   );
 }
