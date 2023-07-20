@@ -1,11 +1,14 @@
 import { ComponentProps, HTMLAttributes, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 
+export interface SectionProps
+  extends PropsWithChildren<ComponentProps<"section">> {}
+
 export default function Section({
   children,
   className,
   ...rest
-}: PropsWithChildren<ComponentProps<"section">>) {
+}: SectionProps) {
   return (
     <section className={twMerge("w-full h-screen", className)} {...rest}>
       {children}
