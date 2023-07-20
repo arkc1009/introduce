@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        bgColor1: "rgb(var(--background-rgb))",
+      },
       fontFamily: {
         sans: ["var(--font-noto-sans)"],
       },
@@ -14,6 +17,9 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      gridTemplateColumns: {
+        auto: "repeat(auto-fill)",
       },
     },
   },
