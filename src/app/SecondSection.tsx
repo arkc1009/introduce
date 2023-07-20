@@ -2,6 +2,7 @@
 
 import Section, { SectionProps } from "@/components/Section";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const container = {
   hidden: { opacity: 0 },
@@ -27,11 +28,18 @@ const item = {
 export default function SecondSection(props: SectionProps) {
   return (
     <Section
-      className="grid grid-cols-2 p-16 gap-4 text-black text-lg"
+      className="grid grid-cols-2 p-16 gap-x-4 text-black text-xl h-auto"
       {...props}
     >
-      <div className="bg-blue-300"></div>
-      <div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        whileHover={{ x: -500 }}
+        transition={{ duration: 1.5 }}
+        className="h-screen flex items-center"
+      >
+      </motion.div>
+      <div className="flex items-center">
         <motion.ul variants={container} initial="hidden" whileInView="show">
           <motion.h4
             variants={title}
@@ -53,21 +61,34 @@ export default function SecondSection(props: SectionProps) {
         </motion.ul>
       </div>
 
-      <div>
-        <motion.ul>
-          <h4 className="font-bold text-4xl mb-2">HYOI</h4>
-          <li>텍스트입니다.</li>
-          <li>텍스트입니다.</li>
-          <li>텍스트입니다.</li>
-          <li>텍스트입니다.</li>
-          <li>텍스트입니다.</li>
-          <li>텍스트입니다.</li>
-          <li>텍스트입니다.</li>
-          <li>텍스트입니다.</li>
-          <li>텍스트입니다.</li>
+      <div className="flex items-center">
+        <motion.ul variants={container} initial="hidden" whileInView="show">
+          <motion.h4
+            variants={title}
+            initial="hidden"
+            whileInView="show"
+            className="font-bold text-6xl mb-2"
+          >
+            HYOI
+          </motion.h4>
+          <motion.li variants={item}>텍스트입니다?</motion.li>
+          <motion.li variants={item}>텍스트입니다?</motion.li>
+          <motion.li variants={item}>텍스트입니다?</motion.li>
+          <motion.li variants={item}>텍스트입니다?</motion.li>
+          <motion.li variants={item}>텍스트입니다?</motion.li>
+          <motion.li variants={item}>텍스트입니다?</motion.li>
+          <motion.li variants={item}>텍스트입니다?</motion.li>
+          <motion.li variants={item}>텍스트입니다?</motion.li>
+          <motion.li variants={item}>텍스트입니다?</motion.li>
         </motion.ul>
       </div>
-      <div className="bg-pink-200"></div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className="h-screen flex items-center"
+      >
+      </motion.div>
     </Section>
   );
 }
