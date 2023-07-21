@@ -1,5 +1,7 @@
 "use client";
 
+import IntroduceParagraph from "@/components/Paragraph/IntroduceParagraph";
+import ScrollArrow from "@/components/ScrollArrow";
 import Section, { SectionProps } from "@/components/Section";
 import ArrowSection from "@/components/Section/ArrowSection";
 import { motion } from "framer-motion";
@@ -31,6 +33,7 @@ export default function SecondSection(props: SectionProps) {
     <ArrowSection
       className="grid grid-cols-2 p-16 gap-x-4 text-black text-xl h-auto"
       nextId="3"
+      circle
       {...props}
     >
       <motion.div
@@ -39,58 +42,22 @@ export default function SecondSection(props: SectionProps) {
         whileHover={{ x: -500 }}
         transition={{ duration: 1.5 }}
         className="h-screen flex items-center"
-      >
-      </motion.div>
-      <div className="flex items-center">
-        <motion.ul variants={container} initial="hidden" whileInView="show">
-          <motion.h4
-            variants={title}
-            initial="hidden"
-            whileInView="show"
-            className="font-bold text-6xl mb-2"
-          >
-            PONE
-          </motion.h4>
-          <motion.li variants={item}>텍스트입니다.</motion.li>
-          <motion.li variants={item}>텍스트입니다.</motion.li>
-          <motion.li variants={item}>텍스트입니다.</motion.li>
-          <motion.li variants={item}>텍스트입니다.</motion.li>
-          <motion.li variants={item}>텍스트입니다.</motion.li>
-          <motion.li variants={item}>텍스트입니다.</motion.li>
-          <motion.li variants={item}>텍스트입니다.</motion.li>
-          <motion.li variants={item}>텍스트입니다.</motion.li>
-          <motion.li variants={item}>텍스트입니다.</motion.li>
-        </motion.ul>
-      </div>
+      ></motion.div>
 
-      <div className="flex items-center justify-end pr-24">
-        <motion.ul variants={container} initial="hidden" whileInView="show">
-          <motion.h4
-            variants={title}
-            initial="hidden"
-            whileInView="show"
-            className="font-bold text-6xl mb-2"
-          >
-            HYOI
-          </motion.h4>
-          <motion.li variants={item}>텍스트입니다?</motion.li>
-          <motion.li variants={item}>텍스트입니다?</motion.li>
-          <motion.li variants={item}>텍스트입니다?</motion.li>
-          <motion.li variants={item}>텍스트입니다?</motion.li>
-          <motion.li variants={item}>텍스트입니다?</motion.li>
-          <motion.li variants={item}>텍스트입니다?</motion.li>
-          <motion.li variants={item}>텍스트입니다?</motion.li>
-          <motion.li variants={item}>텍스트입니다?</motion.li>
-          <motion.li variants={item}>텍스트입니다?</motion.li>
-        </motion.ul>
-      </div>
+      <IntroduceParagraph title="PONE" youtube="https://youtu.be/cTeNxrgBrw8" />
+
+      <IntroduceParagraph
+        title="HYOI"
+        className="items-end"
+        youtube="https://youtu.be/cTeNxrgBrw8"
+      />
+
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
         className="h-screen flex items-center"
-      >
-      </motion.div>
+      ></motion.div>
     </ArrowSection>
   );
 }
