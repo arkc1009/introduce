@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import IntroduceParagraph from "@/components/Paragraph/IntroduceParagraph";
-import ScrollArrow from "@/components/ScrollArrow";
-import Section, { SectionProps } from "@/components/Section";
-import ArrowSection from "@/components/Section/ArrowSection";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import IntroduceParagraph from '@/components/Paragraph/IntroduceParagraph';
+import ScrollArrow from '@/components/ScrollArrow';
+import Section, { SectionProps } from '@/components/Section';
+import ArrowSection from '@/components/Section/ArrowSection';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const container = {
   hidden: { opacity: 0 },

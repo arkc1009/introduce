@@ -1,11 +1,12 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { nanoid } from "nanoid";
-import { useMemo } from "react";
-import { ClassNameValue, twJoin, twMerge } from "tailwind-merge";
-import YoutubeIframe from "../Iframe/YoutubeIframe";
-import { GrYoutube, GrTwitter, GrSoundcloud } from "react-icons/gr";
+import { motion } from 'framer-motion';
+import { nanoid } from 'nanoid';
+import { useMemo } from 'react';
+import { GrSoundcloud, GrTwitter, GrYoutube } from 'react-icons/gr';
+import { ClassNameValue, twJoin, twMerge } from 'tailwind-merge';
+
+import YoutubeIframe from '../Iframe/YoutubeIframe';
 
 type Sns = { youtube: string; twitter: string; soundcloud: string };
 
@@ -49,7 +50,7 @@ export default function IntroduceParagraph({
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
-      className={twMerge("flex flex-col justify-center", className)}
+      className={twMerge('flex flex-col justify-center', className)}
       {...rest}
     >
       <motion.div
@@ -59,10 +60,7 @@ export default function IntroduceParagraph({
         className="min-w-[250px] w-max mb-2 grid grid-cols-2"
       >
         <h4 className="font-extrabold text-8xl mb-1 col-[1_/_3]">{title}</h4>
-        <motion.ul
-          variants={containerVariants}
-          className="flex gap-4 items-center"
-        >
+        <motion.ul variants={containerVariants} className="flex gap-4 items-center">
           <motion.li
             variants={itemVariants}
             className="text-red-500 cursor-pointer hover:!opacity-60"
@@ -91,8 +89,8 @@ export default function IntroduceParagraph({
 
         <motion.a
           className={twJoin(
-            "font-bold opacity-75 cursor-pointer text-end",
-            "hover:underline hover:opacity-50"
+            'font-bold opacity-75 cursor-pointer text-end',
+            'hover:underline hover:opacity-50',
           )}
           initial={{ opacity: 0, y: -10 }}
           whileInView={{
@@ -108,9 +106,7 @@ export default function IntroduceParagraph({
         </motion.a>
       </motion.div>
 
-      {youtube ? (
-        <YoutubeIframe src={youtube} width="80%" height="450" title="TEST" />
-      ) : null}
+      {youtube ? <YoutubeIframe src={youtube} width="80%" height="450" title="TEST" /> : null}
     </motion.ul>
   );
 }

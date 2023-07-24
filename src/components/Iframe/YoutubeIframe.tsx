@@ -5,15 +5,10 @@ interface YoutubeIframeProps {
   title?: string;
 }
 
-export default function YoutubeIframe({
-  width,
-  height,
-  src,
-  title,
-}: YoutubeIframeProps) {
-  const embedSrc = src.includes("embed")
+export default function YoutubeIframe({ width, height, src, title }: YoutubeIframeProps) {
+  const embedSrc = src.includes('embed')
     ? src
-    : `https://www.youtube.com/embed/${src.split("/").at(-1)}`;
+    : `https://www.youtube.com/embed/${src.split('/').at(-1)}`;
 
   return (
     <iframe

@@ -1,11 +1,8 @@
-import Section, { SectionProps } from "@/components/Section";
+import Section, { SectionProps } from '@/components/Section';
 
 export default function ThirdSection(props: SectionProps) {
   return (
-    <Section
-      {...props}
-      className="flex flex-col items-center gap-8 bg-blue-100 p-16"
-    >
+    <Section {...props} className="flex flex-col items-center gap-8 bg-blue-100 p-16">
       <div>
         <iframe
           width="560"
