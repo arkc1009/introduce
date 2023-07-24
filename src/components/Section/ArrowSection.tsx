@@ -1,8 +1,9 @@
 import { twMerge } from 'tailwind-merge';
+
 import Section, { SectionProps } from '.';
 import ScrollArrow, { ScrollArrowProps } from '../ScrollArrow';
 
-interface ArrowSectionProps extends SectionProps, Pick<ScrollArrowProps, 'circle'> {
+export interface ArrowSectionProps extends SectionProps, Pick<ScrollArrowProps, 'circle'> {
   nextId?: string;
 }
 

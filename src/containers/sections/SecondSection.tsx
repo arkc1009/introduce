@@ -1,32 +1,10 @@
 'use client';
 
 import IntroduceParagraph from '@/components/Paragraph/IntroduceParagraph';
-import ScrollArrow from '@/components/ScrollArrow';
-import Section, { SectionProps } from '@/components/Section';
+import { SectionProps } from '@/components/Section';
 import ArrowSection from '@/components/Section/ArrowSection';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.4,
-      duration: 0.4,
-    },
-  },
-};
-
-const title = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 },
-};
-
-const item = {
-  hidden: { opacity: 0, y: -10 },
-  show: { opacity: 1, y: 0 },
-};
 
 export default function SecondSection(props: SectionProps) {
   return (
