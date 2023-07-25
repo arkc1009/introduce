@@ -1,6 +1,6 @@
 import Section from '@/components/Section';
-import SecondSection from '@/containers/sections/SecondSection';
-import ThirdSection from '@/containers/sections/ThirdSection';
+import IFrameSection from '@/containers/sections/IframeSection';
+import OverviewSection from '@/containers/sections/OverviewSection';
 import TitleSection from '@/containers/sections/TitleSection';
 
 export default function Home() {
@@ -8,9 +8,9 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center">
       <TitleSection id="1" nextId="2" />
 
-      <SecondSection id="2" />
+      <OverviewSection id="2" />
 
-      <ThirdSection id="3" />
+      <IFrameSection id="3" />
 
       <Section id="4" className="bg-slate-300">
         <svg>
