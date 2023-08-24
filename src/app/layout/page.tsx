@@ -1,4 +1,5 @@
 import CircleWave from '@/components/Effects/CircleWave';
+import Cycle from '@/components/Layouts/Cycle';
 import Gallery from '@/components/Layouts/Gallery';
 import SortList from '@/components/Layouts/SortList';
 
@@ -13,6 +14,11 @@ export default function LayoutPage() {
       <section className="w-full text-center">
         <h1 className="font-extrabold text-2xl mb-4">Sort List</h1>
         <SortList />
+      </section>
+
+      <section className="w-full text-center flex flex-col items-center">
+        <h1 className="font-extrabold text-2xl mb-4">Cycle</h1>
+        <Cycle />
       </section>
     </div>
   );
