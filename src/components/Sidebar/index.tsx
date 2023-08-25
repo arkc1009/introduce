@@ -1,22 +1,10 @@
 'use client';
 
-import { AnimatePresence, Variants, motion, useTime, useTransform } from 'framer-motion';
+import { AnimatePresence, Variants, motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
 
-interface Menu {
-  title: string;
-  href?: string;
-  icon?: React.ReactNode;
-}
-
-const menus: Menu[] = [
-  { title: 'Home', icon: '🎮', href: '/' },
-  { title: 'Scroll', icon: '🎧', href: '/scroll' },
-  { title: 'Layout', icon: '🏆', href: '/layout' },
-  { title: 'Effects', icon: '🎸', href: '/effects' },
-  { title: 'menu512421421', icon: '📢' },
-];
+import { menus } from '@lib/constants';
 
 const areaVariants: Variants = {
   initial: { x: -5 },

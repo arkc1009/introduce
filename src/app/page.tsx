@@ -2,14 +2,9 @@
 
 import ReOrder from '@/components/ReOrder';
 import Refresh from '@/components/Refresh';
-import Section from '@/components/Section';
 import Slides from '@/components/Slides';
 import Stacks from '@/components/Stacks';
-import IFrameSection from '@/containers/sections/IframeSection';
-import OverviewSection from '@/containers/sections/OverviewSection';
-import TitleSection from '@/containers/sections/TitleSection';
 import { AnimatePresence, Variants, motion, spring } from 'framer-motion';
-import { nanoid } from 'nanoid';
 import { useCallback, useState } from 'react';
 import { ClassNameValue, twMerge } from 'tailwind-merge';
 
@@ -28,17 +23,6 @@ const tabDatas: TabData[] = [
 export default function Home() {
   const [isOn, setIsOn] = useState(false);
   const [selectedId, setSelectedId] = useState('1');
-  const [elPosition, setElPosition] = useState(0);
-
-  const positionVariant: Variants = {
-    initial: {
-      x: 0,
-      y: 0,
-    },
-    move: (position: number) => ({
-      x: position,
-    }),
-  };
 
   const handleSwitch = useCallback(() => {
     setIsOn((prevState) => !prevState);
@@ -50,7 +34,9 @@ export default function Home() {
 
   return (
     <main className="max-w-[1200px] mx-auto flex min-h-screen flex-col items-center gap-8 pt-8">
-      <h1 className="text-2xl font-semibold">Switch</h1>
+      <h1 id="Switch" className="text-2xl font-semibold">
+        Switch
+      </h1>
       <div
         onClick={handleSwitch}
         className={twMerge(
@@ -70,7 +56,9 @@ export default function Home() {
 
       <hr className="w-full border-slate-700" />
 
-      <h1 className="text-2xl font-semibold">Tabs</h1>
+      <h1 id="Tabs" className="text-2xl font-semibold">
+        Tabs
+      </h1>
       <section className="w-[700px] border-2 border-slate-600">
         <ul className="w-full h-[100px] bg-slate-50 flex">
           {tabDatas.map(({ id, title, color }) => (
@@ -109,7 +97,9 @@ export default function Home() {
 
       <hr className="w-full border-slate-700" />
 
-      <h1 className="text-2xl font-semibold">Slide</h1>
+      <h1 id="Slide" className="text-2xl font-semibold">
+        Slide
+      </h1>
       <section className="w-full h-[500px]">
         <Slides>
           <p className="w-full h-full grid place-items-center bg-red-200">1</p>
@@ -122,7 +112,9 @@ export default function Home() {
 
       <hr className="w-full border-slate-700" />
 
-      <h1 className="text-2xl font-semibold">Stacks</h1>
+      <h1 id="Stacks" className="text-2xl font-semibold">
+        Stacks
+      </h1>
       <section className="w-full h-[500px] flex justify-center items-center gap-4">
         <div className="w-1/2 h-full text-center">
           <h2>Click</h2>
@@ -136,7 +128,9 @@ export default function Home() {
 
       <hr className="w-full border-slate-700" />
 
-      <h1 className="text-2xl font-semibold">Refresh</h1>
+      <h1 id="Refresh" className="text-2xl font-semibold">
+        Refresh
+      </h1>
       <section className="w-full h-[500px] flex justify-center items-center gap-8">
         <Refresh onRefresh={() => console.log('Refresh!!')}>
           <ul className="w-[300px] p-4 flex flex-col gap-2">
@@ -157,24 +151,11 @@ export default function Home() {
 
       <hr className="w-full border-slate-700" />
 
-      <h1 className="text-2xl font-semibold bg-red-400">ReOrder</h1>
+      <h1 id="ReOrder" className="text-2xl font-semibold bg-red-400">
+        ReOrder
+      </h1>
       <section className="w-full h-[500px]">
         <ReOrder />
-      </section>
-
-      <hr className="w-full border-slate-700" />
-
-      <h1 className="text-2xl font-semibold">Scroll</h1>
-      <section className="w-full h-[500px]">
-        <div className="w-full h-full flex flex-col gap-8 overflow-y-auto">
-          {new Array(12).fill(0).map(() => (
-            <p key={nanoid()}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, commodi ab officia
-              illum accusantium vitae delectus numquam repellat, magni ipsum expedita possimus eius
-              amet quae exercitationem eaque nostrum voluptatibus atque.
-            </p>
-          ))}
-        </div>
       </section>
 
       <hr className="w-full border-slate-700" />

@@ -1,3 +1,4 @@
+import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko" className={`${notoSansLocal.variable} scroll-smooth`}>
       <body className="font-sans min-h-screen max-h-screen overflow-y-auto scroll-smooth">
+        <Header />
         {children}
         <Sidebar />
       </body>

@@ -21,7 +21,9 @@ export default function EffectsPage() {
 
   return (
     <main className="max-w-[1200px] mx-auto flex min-h-screen flex-col items-center gap-8 pt-8">
-      <h1 className="text-2xl font-semibold">CircleWave</h1>
+      <h1 className="text-2xl font-semibold" id="CircleWave">
+        CircleWave
+      </h1>
       <section className="w-full flex items-center justify-center gap-8">
         <div className="flex flex-col gap-4">
           <fieldset className="relative flex items-center gap-4">
