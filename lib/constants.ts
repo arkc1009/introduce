@@ -30,5 +30,5 @@ export const menus: Menu[] = [
     href: '/effects',
     subs: ['CircleWave'],
   },
-  { title: 'Dummy', icon: '📢' },
+  { title: 'Copy', href: '/copy', icon: '📢' },
 ];

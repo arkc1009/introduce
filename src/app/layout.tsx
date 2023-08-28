@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className={`${notoSansLocal.variable} scroll-smooth`}>
-      <body className="font-sans min-h-screen max-h-screen overflow-y-auto scroll-smooth">
+      <body className="font-sans min-h-[100dvh] h-[100dvh] max-h-[100dvh] overflow-y-auto overflow-x-hidden scroll-smooth">
         <Header />
         {children}
         <Sidebar />
