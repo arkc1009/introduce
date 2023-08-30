@@ -3,6 +3,7 @@
 import { AnimatePresence, Variants, motion } from 'framer-motion';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
+import { AiOutlineArrowUp } from 'react-icons/ai';
 import { twMerge } from 'tailwind-merge';
 
 import { menus } from '@lib/constants';
@@ -18,8 +19,11 @@ const ExHeaderVariants: Variants = {
   },
 };
 
+const MotionAiOutlineArrowUp = motion(AiOutlineArrowUp);
+
 function Header() {
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
+  const [isHide, setIsHide] = useState(false);
 
   const detailMenu = useMemo(() => {
     if (!hoveredMenu) return;
@@ -29,7 +33,29 @@ function Header() {
 
   return (
     <motion.header className="relative w-full min-h-[45px] h-auto">
-      <nav className="max-w-[1200px] mx-auto flex items-center">
+      <motion.div
+        className="absolute top-4 left-4 cursor-pointer"
+        animate={{ rotate: isHide ? 180 : 0, transition: { duration: 0.6, type: 'spring' } }}
+        whileHover={{
+          y: [0, isHide ? 5 : -5, 0],
+          transition: {
+            repeat: Infinity,
+            repeatType: 'reverse',
+            repeatDelay: 0.3,
+            ease: 'easeInOut',
+          },
+        }}
+        onClick={() => setIsHide((prevHide) => !prevHide)}
+      >
+        <AiOutlineArrowUp className="w-6 h-6" />
+      </motion.div>
+
+      <nav
+        className={twMerge(
+          'max-w-[1200px] mx-auto flex items-center transition-all',
+          isHide && 'h-0 overflow-hidden',
+        )}
+      >
         <ul
           className={twMerge(
             'w-full h-[45px] flex justify-center items-center gap-8 text-xs z-[9997] transition-colors duration-700',

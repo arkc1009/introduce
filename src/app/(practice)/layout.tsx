@@ -3,30 +3,30 @@ import Sidebar from '@/components/Sidebar';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
-import './globals.css';
+import '../globals.css';
 
 const notoSansLocal = localFont({
   src: [
     {
-      path: './fonts/NotoSansKR-Thin.woff2',
+      path: '../fonts/NotoSansKR-Thin.woff2',
     },
     {
-      path: './fonts/NotoSansKR-Black.woff2',
+      path: '../fonts/NotoSansKR-Black.woff2',
     },
     {
-      path: './fonts/NotoSansKR-Bold.woff2',
+      path: '../fonts/NotoSansKR-Bold.woff2',
     },
     {
-      path: './fonts/NotoSansKR-DemiLight.woff2',
+      path: '../fonts/NotoSansKR-DemiLight.woff2',
     },
     {
-      path: './fonts/NotoSansKR-Light.woff2',
+      path: '../fonts/NotoSansKR-Light.woff2',
     },
     {
-      path: './fonts/NotoSansKR-Medium.woff2',
+      path: '../fonts/NotoSansKR-Medium.woff2',
     },
     {
-      path: './fonts/NotoSansKR-Regular.woff2',
+      path: '../fonts/NotoSansKR-Regular.woff2',
     },
   ],
   variable: '--font-noto-sans',
